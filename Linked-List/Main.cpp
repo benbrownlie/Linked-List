@@ -1,6 +1,6 @@
-#include <iostream>
+#include "List.h"
 
-int Main()
+int main()
 {
-
+	system("pause");
 }
