@@ -6,8 +6,8 @@ struct Node
 public:
 	Node();
 	Node(T value);
-	Node* next;
-	Node* previous;
+	Node<T>* next;
+	Node<T>* previous;
 	T data;
 private:
 

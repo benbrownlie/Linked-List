@@ -65,6 +65,7 @@ inline bool List<T>::contains(const T& object) const
 template<typename T>
 inline void List<T>::pushFront(const T& value) const
 {
+
 	return void();
 }
 

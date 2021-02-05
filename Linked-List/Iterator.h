@@ -16,7 +16,7 @@ public:
 
 private:
 	//Placeholder until Node struct is created
-	//Node<T>* current;
+	Node<T>* current;
 };
 
 template<typename T>
@@ -35,8 +35,7 @@ template<typename T>
 inline Iterator<T> Iterator<T>::operator++()
 {
 	Node node;
-	node.data 
-	return Iterator<T>();
+
 }
 
 template<typename T>
