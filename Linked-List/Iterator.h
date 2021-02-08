@@ -36,10 +36,13 @@ inline Iterator<T> Iterator<T>::operator++()
 {
 	//Goal: Have overloaded operator add two nodes together
 	//Idea example
-	Node node1;
-	Node node2;
-	Node node3 = node1.data + node2.data;
-	return node3;
+	//Node node1;
+	//Node node2;
+	//Node node3 = node1.data + node2.data;
+	//return node3;
+
+	//Idea example2
+	//return node1.next;
 }
 
 template<typename T>
@@ -51,7 +54,14 @@ inline Iterator<T> Iterator<T>::operator--()
 template<typename T>
 inline const bool Iterator<T>::operator==(const Iterator<T>& iter)
 {
-	return false;
+	if (current == iter.current)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
 
 template<typename T>
