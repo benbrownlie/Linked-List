@@ -34,8 +34,12 @@ inline Iterator<T>::Iterator(Node<T>* node)
 template<typename T>
 inline Iterator<T> Iterator<T>::operator++()
 {
-	Node node;
-
+	//Goal: Have overloaded operator add two nodes together
+	//Idea example
+	Node node1;
+	Node node2;
+	Node node3 = node1.data + node2.data;
+	return node3;
 }
 
 template<typename T>
