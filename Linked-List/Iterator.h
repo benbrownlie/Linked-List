@@ -15,7 +15,6 @@ public:
 	T operator *();
 
 private:
-	//Placeholder until Node struct is created
 	Node<T>* current;
 };
 
@@ -34,27 +33,21 @@ inline Iterator<T>::Iterator(Node<T>* node)
 template<typename T>
 inline Iterator<T> Iterator<T>::operator++()
 {
-	//Goal: Have overloaded operator add two nodes together
-	//Idea example
-	//Node node1;
-	//Node node2;
-	//Node node3 = node1.data + node2.data;
-	//return node3;
+	//Idea: Get the current and increment
 
-	//Idea example2
-	//return node1.next;
+	return current->data++;
 }
 
 template<typename T>
 inline Iterator<T> Iterator<T>::operator--()
 {
-	return Iterator<T>();
+	return current->data--;
 }
 
 template<typename T>
 inline const bool Iterator<T>::operator==(const Iterator<T>& iter)
 {
-	if (current == iter.current)
+	if (current->data == iter.data)
 	{
 		return true;
 	}
@@ -67,7 +60,14 @@ inline const bool Iterator<T>::operator==(const Iterator<T>& iter)
 template<typename T>
 inline const bool Iterator<T>::operator!=(const Iterator<T>& iter)
 {
-	return false;
+	if (current->data != iter.current)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
 
 template<typename T>
