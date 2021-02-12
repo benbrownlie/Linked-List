@@ -21,27 +21,25 @@ private:
 template<typename T>
 inline Iterator<T>::Iterator()
 {
-
+	current = nullptr;
 }
 
 template<typename T>
 inline Iterator<T>::Iterator(Node<T>* node)
 {
-
+	current = node;
 }
 
 template<typename T>
 inline Iterator<T> Iterator<T>::operator++()
 {
-	//Idea: Get the current and increment
 
-	return current->data++;
 }
 
 template<typename T>
 inline Iterator<T> Iterator<T>::operator--()
 {
-	return current->data--;
+	
 }
 
 template<typename T>
@@ -73,5 +71,5 @@ inline const bool Iterator<T>::operator!=(const Iterator<T>& iter)
 template<typename T>
 inline T Iterator<T>::operator*()
 {
-	return T();
+	return current->data;
 }
