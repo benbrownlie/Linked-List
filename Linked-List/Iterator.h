@@ -33,19 +33,29 @@ inline Iterator<T>::Iterator(Node<T>* node)
 template<typename T>
 inline Iterator<T> Iterator<T>::operator++()
 {
-
+	if (current->next != nullptr)
+	{
+		current = current->next;
+		return *this;
+	}
+	return nullptr;
 }
 
 template<typename T>
 inline Iterator<T> Iterator<T>::operator--()
 {
-	
+	if (current->next != nullptr)
+	{
+		current = current->next;
+		return *this;
+	}
+	return nullptr;
 }
 
 template<typename T>
 inline const bool Iterator<T>::operator==(const Iterator<T>& iter)
 {
-	if (current->data == iter.data)
+	if (current != nullptr && iter.current != nullptr && current->data == &iter.current->data)
 	{
 		return true;
 	}
@@ -58,7 +68,12 @@ inline const bool Iterator<T>::operator==(const Iterator<T>& iter)
 template<typename T>
 inline const bool Iterator<T>::operator!=(const Iterator<T>& iter)
 {
-	if (current->data != iter.current)
+	if (current == nullptr || iter.current == nullptr)
+	{
+		return false;
+	}
+
+	if (&current->data != &iter.current->data)
 	{
 		return true;
 	}
