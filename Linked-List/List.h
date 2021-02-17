@@ -55,32 +55,35 @@ inline List<T>::~List()
 template<typename T>
 inline void List<T>::destroy()
 {
-
-}
-
-template<typename T>
-inline T List<T>::front() const
-{
-	return T();
-}
-
-template<typename T>
-inline T List<T>::back() const
-{
-	return T();
+	for (int i = 0; i < getLength; i++)
+	{
+		begin++;
+		delete begin* T;
+	}
+	delete this;
 }
 
 template<typename T>
 inline bool List<T>::contains(const T& object) const
 {
+	if (this->m_head->data == object)
+		return true;
+
+	if (this->m_head->data == object)
+		return true;
+
+	for (T i = this->begin(); i != this->end(); i++)
+	{
+		if (*i == object)
+			return true;
+	}
 	return false;
 }
 
 template<typename T>
 inline void List<T>::pushFront(const T& object)
 {
-
-	return void();
+	
 }
 
 template<typename T>
@@ -92,7 +95,7 @@ inline void List<T>::pushBack(const T& object)
 template<typename T>
 inline bool List<T>::insert(const T& value, int index)
 {
-	return false;
+	
 }
 
 template<typename T>
@@ -113,7 +116,9 @@ inline void List<T>::print() const
 template<typename T>
 inline void List<T>::Initialize()
 {
-
+	m_head = nullptr;
+	m_tail = nullptr;
+	m_nodeCount = 0;
 }
 
 template<typename T>
@@ -132,7 +137,7 @@ inline bool List<T>::isEmpty() const
 template<typename T>
 inline int List<T>::getLength() const
 {
-	return 0;
+	return m_nodeCount;
 }
 
 template<typename T>
@@ -150,16 +155,20 @@ inline void List<T>::sort()
 template<typename T>
 inline Iterator<T> List<T>::begin() const
 {
-	return Iterator<T>();
+	return new Iterator<T>(m_head);
 }
 
 template<typename T>
 inline Iterator<T> List<T>::end() const
 {
-	return Iterator<T>();
+	return new Iterator<T>(m_tail);
 }
 
 template<typename T>
 inline void List<T>::copyList(const List<T>& other)
 {
+	this->m_head = other.m_head;
+	this->m_trail = other.m_tail;
+	m_nodeCount = other.getLength();
+	delete other;
 }
