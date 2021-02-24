@@ -64,6 +64,18 @@ inline void List<T>::destroy()
 }
 
 template<typename T>
+inline T List<T>::front() const
+{
+	return m_head.data;
+}
+
+template<typename T>
+inline T List<T>::back() const
+{
+	return m_tail.data;
+}
+
+template<typename T>
 inline bool List<T>::contains(const T& object) const
 {
 	if (this->m_head->data == object)
