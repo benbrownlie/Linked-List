@@ -160,7 +160,7 @@ inline int List<T>::getLength() const
 template<typename T>
 inline List<T>& List<T>::operator=(const List<T>& otherList) const
 {
-	// TODO: insert return statement here
+
 }
 
 template<typename T>
