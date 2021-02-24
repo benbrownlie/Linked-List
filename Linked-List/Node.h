@@ -16,8 +16,7 @@ private:
 template<typename T>
 inline Node<T>::Node()
 {
-	//next =
-	//previous = 
+
 }
 
 template<typename T>

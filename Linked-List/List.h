@@ -19,7 +19,7 @@ public:
 	void print() const;
 	void Initialize();
 	bool isEmpty() const;
-	//bool getData(Iterator<T>& iter, int index);
+	bool getData(Iterator<T>& iter, int index);
 	int getLength() const;
 	List<T>& operator = (const List<T>& otherList) const;
 	void sort();
@@ -27,7 +27,6 @@ public:
 	Iterator<T> end() const;
 
 private:
-	//Placeholder until Node struct is created
 	Node<T> m_head = nullptr;
 	Node<T> m_tail = nullptr;
 	int m_nodeCount;
@@ -144,6 +143,12 @@ inline bool List<T>::isEmpty() const
 	{
 		return false;
 	}
+}
+
+template<typename T>
+inline bool List<T>::getData(Iterator<T>& iter, int index)
+{
+	return false;
 }
 
 template<typename T>

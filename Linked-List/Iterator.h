@@ -6,7 +6,6 @@ class Iterator
 {
 public:
 	Iterator<T>();
-	//Placeholder until Node struct is created
 	Iterator<T>(Node<T>* node);
 	Iterator<T> operator ++();
 	Iterator<T> operator --();
