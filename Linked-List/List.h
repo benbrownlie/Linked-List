@@ -36,24 +36,28 @@ private:
 template<typename T>
 inline List<T>::List()
 {
+	//Calls the initialize function
 	Initialize();
 }
 
 template<typename T>
 inline List<T>::List(List<T>&other)
 {
+	//Calls the copyList function with other passed in as the argument
 	copyList(other);
 }
 
 template<typename T>
 inline List<T>::~List()
 {
+	//Calls the destroy function
 	destroy();
 }
 
 template<typename T>
 inline void List<T>::destroy()
 {
+	//For loop, while i is less than getLength increments begin and deletes begin pointer
 	for (int i = 0; i < getLength; i++)
 	{
 		begin++;
@@ -65,12 +69,14 @@ inline void List<T>::destroy()
 template<typename T>
 inline T List<T>::front() const
 {
+	//returns the node m_head's data
 	return m_head.data;
 }
 
 template<typename T>
 inline T List<T>::back() const
 {
+	//returns the node m_tail's data
 	return m_tail.data;
 }
 

@@ -13,12 +13,14 @@ private:
 
 };
 
+//Default constructor for Node
 template<typename T>
 inline Node<T>::Node()
 {
 
 }
 
+//Constructor for Node that takes in an argument "value"
 template<typename T>
 inline Node<T>::Node(T value)
 {
